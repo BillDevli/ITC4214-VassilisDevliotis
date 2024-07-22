@@ -1,0 +1,27 @@
+{% extends "catalog/base.html" %}
+
+{% block content %}
+
+
+<!-- Header-->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h5 class="display-4 fw-bolder">Add Product</h5>                    
+        </div>
+    </div>
+</header>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Add Product</h2>
+            <form method="post" enctype="multipart/form-data" action="{% url 'add_product' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Add Product</button>
+            </form>
+        </div>
+    </div>        
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h5 class="display-4 fw-bolder">Register</h5>                    
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="row">
+                <center>
+                    <div class="col-8">
+
+                        <br/><br>
+                        <form method="POST" action="{% url 'register' %}">
+                            {% csrf_token %}
+
+                            {{ form.as_p }}
+                            <br/><br/>
+                            <button type="submit" class="btn btn-secondary">
+                                Register
+                            </button>
+                            
+                        </form>
+
+                    </div>
+                    <br/><br>
+                <br/><br>
+                </center>
+            </div>
+        </div>
+
+{% endblock %}
